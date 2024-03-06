@@ -11,22 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'ATIVIDADE 01',
       theme: ThemeData(
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -45,19 +30,111 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  bool isFavorite = false; // state
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: Text(widget.title),
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+        centerTitle: true,
+      ),
+      // ignore: avoid_unnecessary_containers
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Image.network(
+              'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/cd/7c/8b/rio-ji-parana.jpg?w=700&h=-1&s=1',
+              fit: BoxFit.cover,
+              height: 280,
+            ),
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                child: Column(
+                  children: <Widget>[
+                    ListTile(
+                      title: const Text('Brasil',
+                          style: TextStyle(fontWeight: FontWeight.w500)),
+                      leading: const Icon(
+                        Icons.location_city,
+                        color: Colors.deepPurple,
+                      ),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.star),
+                        color: isFavorite ? Colors.yellow[600] : Colors.grey,
+                        // altera
+                        onPressed: () {
+                          setState(() {
+                            isFavorite = !isFavorite; // state
+                          });
+                        },
+                      ),
+                      subtitle: const Text('Ji-Paraná, Rondônia'),
+                    ),
+                    const Divider(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {},
+                            child: const ListTile(
+                              leading: Icon(Icons.facebook,
+                                  color: Colors.deepPurple),
+                              contentPadding: EdgeInsets.all(8.0),
+                              title: Text(
+                                'Facebook',
+                                softWrap: false,
+                                style: TextStyle(fontSize: 15.0),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {},
+                            child: const ListTile(
+                              contentPadding: EdgeInsets.all(8.0),
+                              leading:
+                                  Icon(Icons.map, color: Colors.deepPurple),
+                              title: Text('Endereço',
+                                  style: TextStyle(fontSize: 15.0),
+                                  softWrap: false),
+                            ),
+                          ),
+                        ),
+                        Flexible(
+                          child: InkWell(
+                            onTap: () {},
+                            child: const ListTile(
+                              contentPadding: EdgeInsets.all(8.0),
+                              leading:
+                                  Icon(Icons.share, color: Colors.deepPurple),
+                              title: Text(
+                                'Compartilhar',
+                                style: TextStyle(fontSize: 15.0),
+                                softWrap: false,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                          'Ji-Paraná é um município brasileiro do estado de Rondônia. Sua população, conforme estimativas do IBGE de 2021, era de 131.026 habitantes, sendo o segundo mais populoso do estado e o décimo sexto mais populoso da Região Norte do Brasil, a 226ª mais populosa do Brasil e a 113ª mais populosa cidade do interior brasileiro. ',
+                          style: TextStyle(fontSize: 16.0)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
-        // ignore: avoid_unnecessary_containers
-        body: Container(
-          child: const Text(
-            'era pra ser vermelho',
-            style: TextStyle(color: Color.fromARGB(255, 198, 28, 28)),
-          ),
-        ));
+      ),
+    );
   }
 }
