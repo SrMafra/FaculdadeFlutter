@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       trailing: IconButton(
                         icon: const Icon(Icons.star),
-                        color: isFavorite ? Colors.yellow[600] : Colors.grey,
+                        color: isFavorite ? Colors.yellow[500] : Colors.grey,
                         // altera
                         onPressed: () {
                           setState(() {
@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               title: Text(
                                 'Facebook',
                                 softWrap: false,
-                                style: TextStyle(fontSize: 15.0),
+                                style: TextStyle(fontSize: 20.0),
                               ),
                             ),
                           ),
@@ -100,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               leading:
                                   Icon(Icons.map, color: Colors.deepPurple),
                               title: Text('Endereço',
-                                  style: TextStyle(fontSize: 15.0),
+                                  style: TextStyle(fontSize: 20.0),
                                   softWrap: false),
                             ),
                           ),
@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Icon(Icons.share, color: Colors.deepPurple),
                               title: Text(
                                 'Compartilhar',
-                                style: TextStyle(fontSize: 15.0),
+                                style: TextStyle(fontSize: 20.0),
                                 softWrap: false,
                               ),
                             ),
@@ -123,10 +123,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                     const Padding(
-                      padding: EdgeInsets.all(16.0),
+                      padding: EdgeInsets.all(15.0),
                       child: Text(
                           'Ji-Paraná é um município brasileiro do estado de Rondônia. Sua população, conforme estimativas do IBGE de 2021, era de 131.026 habitantes, sendo o segundo mais populoso do estado e o décimo sexto mais populoso da Região Norte do Brasil, a 226ª mais populosa do Brasil e a 113ª mais populosa cidade do interior brasileiro. ',
-                          style: TextStyle(fontSize: 16.0)),
+                          style: TextStyle(fontSize: 15.0)),
                     ),
                   ],
                 ),
