@@ -15,126 +15,136 @@ class _Livro1PageState extends State<Livro1Page> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: DefaultTabController(
-            length: 2,
-            child: Scaffold(
-              appBar: AppBar(
-                backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-                title: Text(widget.title),
-                bottom: const TabBar(tabs: [
-                  Tab(
-                      icon: Icon(
-                    Icons.menu_book,
-                    color: Colors.white,
-                  )),
-                  Tab(
-                    icon: Icon(Icons.description, color: Colors.white),
-                  )
-                ]),
+      home: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+            title: Text(widget.title),
+            bottom: const TabBar(tabs: [
+              Tab(
+                icon: Icon(
+                  Icons.menu_book,
+                  color: Colors.white,
+                ),
               ),
-              body: TabBarView(
+              Tab(
+                icon: Icon(Icons.description, color: Colors.white),
+              ),
+            ]),
+          ),
+          body: TabBarView(
+            children: <Widget>[
+              Column(
                 children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Container(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Card(
-                          child: Column(
-                            children: <Widget>[
-                              ListTile(
-                                title: const Text(
-                                  'Manual Deops',
-                                  style: TextStyle(fontWeight: FontWeight.w500),
-                                ),
-                                leading: const Icon(
-                                  Icons.book_online,
-                                  color: Colors.green,
-                                ),
-                                trailing: IconButton(
-                                  icon: const Icon(Icons.star),
-                                  color: isFavorite
-                                      ? Colors.yellow[500]
-                                      : Colors.grey,
-                                  onPressed: () {
-                                    setState(() {
-                                      isFavorite = !isFavorite; // state
-                                    });
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            title: const Text(
+                              'Manual DevOps',
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                            leading: const Icon(
+                              Icons.book_online,
+                              color: Colors.green,
+                            ),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.star),
+                              color:
+                                  isFavorite ? Colors.yellow[500] : Colors.grey,
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    isFavorite = !isFavorite; // state
                                   },
-                                ),
-                                subtitle: const Text('Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas'),
-                              ),
-                              const Divider(),
-                              const Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo mauris. Cras et libero id ipsum ullamcorper fermentum. Vivamus sit amet neque non tortor pharetra convallis.',
-                          style: TextStyle(fontSize: 15.0)),
+                                );
+                              },
+                            ),
+                            subtitle: const Text(
+                                'Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas'),
+                          ),
+                        ],
+                      ),
                     ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Image.asset(
-                        'assets/livro1.jpg', // Substitua 'assets/sua_imagem.png' pelo caminho da sua imagem
-                        width:
-                            600, // Ajuste o tamanho da imagem conforme necessário
-                        height:
-                            600, // Ajuste o tamanho da imagem conforme necessário
-                        fit: BoxFit
-                            .contain, // Ajuste o modo de preenchimento da imagem conforme necessário
-                      ),
-                    ],
                   ),
-                  Column(
-                    children: <Widget>[
-                      Container(
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Card(
-                          child: Column(
-                            children: <Widget>[
-                              ListTile(
-                                title: const Text(
-                                  'Livro1',
-                                  style: TextStyle(fontWeight: FontWeight.w500),
-                                ),
-                                leading: const Icon(
-                                  Icons.book_online,
-                                  color: Colors.green,
-                                ),
-                                trailing: IconButton(
-                                  icon: const Icon(Icons.star),
-                                  color: isFavorite
-                                      ? Colors.yellow[500]
-                                      : Colors.grey,
-                                  onPressed: () {
-                                    setState(() {
-                                      isFavorite = !isFavorite; // state
-                                    });
-                                  },
-                                ),
-                                subtitle: const Text('Livro 1'),
-                                
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Expanded(
+                              flex: 1,
+                              child: Image.asset(
+                                'assets/livro1.jpg',
+                                fit: BoxFit.cover,
                               ),
-                              
-                            ],
-                            
-                          ),
-                          
+                            ),
+                            const SizedBox(width: 8.0),
+                            const Expanded(
+                              flex: 2,
+                              child: Text(
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et ultricies quam. In mollis consequat magna in dapibus. Maecenas auctor vel nunc ac blandit. Duis egestas justo ac diam cursus rhoncus. Pellentesque non lorem dapibus, dignissim sem sit amet, ultricies nibh. Nam ultrices orci sit amet odio porttitor ultricies. Donec blandit congue ante, nec ultricies sapien. Etiam id arcu leo. Vestibulum suscipit nisl ut turpis venenatis, fringilla semper sem finibus. Cras ultrices nunc ut lorem scelerisque congue. Quisque varius efficitur quam, et ullamcorper nibh viverra id. Suspendisse in dui luctus, pretium elit id, gravida enim. Aliquam sed pretium urna, vel ultrices enim. Proin venenatis, nunc ut gravida egestas, ante mi faucibus ligula, ac finibus dui sem id sapien. Sed eleifend sed lectus nec ultricies.',
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      Image.asset(
-                        'assets/livro1.jpg', // Substitua 'assets/sua_imagem.png' pelo caminho da sua imagem
-                        width:
-                            200, // Ajuste o tamanho da imagem conforme necessário
-                        height:
-                            200, // Ajuste o tamanho da imagem conforme necessário
-                        fit: BoxFit
-                            .contain, // Ajuste o modo de preenchimento da imagem conforme necessário
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
-            )));
+              Column(
+                children: <Widget>[
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            title: const Text(
+                              'Livro1',
+                              style: TextStyle(fontWeight: FontWeight.w500),
+                            ),
+                            leading: const Icon(
+                              Icons.book_online,
+                              color: Colors.green,
+                            ),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.star),
+                              color:
+                                  isFavorite ? Colors.yellow[500] : Colors.grey,
+                              onPressed: () {
+                                setState(
+                                  () {
+                                    isFavorite = !isFavorite; // state
+                                  },
+                                );
+                              },
+                            ),
+                            subtitle: const Text('Livro 1'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Image.asset(
+                    'assets/livro1.jpg',
+                    width: 200,
+                    height: 200,
+                    fit: BoxFit.contain,
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
