@@ -33,13 +33,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const Livro1Page(
-                            title: 'LIVRO 1',
+                            title: 'Biblioteca IFRO',
                           )),
                 );
               },
               child: Container(
                 padding: const EdgeInsets.all(8),
-                height: 400, // Altura fixa para o Container
+                height: 600, // Altura fixa para o Container
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 10,
                     ), // Espaçamento entre a imagem e o texto
                     const Text(
-                      "Nome do Livro 1",
+                      "Manual DevOps",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const Livro2Page(title: 'LIVRO 2')),
+                      builder: (context) => const Livro2Page(title: 'Biblioteca IFRO')),
                 );
               },
               child: Container(

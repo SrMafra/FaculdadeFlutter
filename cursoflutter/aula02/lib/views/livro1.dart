@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -45,7 +46,8 @@ class _Livro1PageState extends State<Livro1Page> {
                           ListTile(
                             title: const Text(
                               'Manual DevOps',
-                              style: TextStyle(fontWeight: FontWeight.w500),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 25.0),
                             ),
                             leading: const Icon(
                               Icons.book_online,
@@ -64,7 +66,10 @@ class _Livro1PageState extends State<Livro1Page> {
                               },
                             ),
                             subtitle: const Text(
-                                'Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas'),
+                                'Como Obter Agilidade, Confiabilidade e Segurança em Organizações Tecnológicas',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 15.0)),
                           ),
                         ],
                       ),
@@ -100,44 +105,63 @@ class _Livro1PageState extends State<Livro1Page> {
                 ],
               ),
               Column(
+                //detalhes
                 children: <Widget>[
                   Container(
                     padding: const EdgeInsets.all(8.0),
-                    child: Card(
+                    child: const Card(
                       child: Column(
                         children: <Widget>[
                           ListTile(
-                            title: const Text(
-                              'Livro1',
-                              style: TextStyle(fontWeight: FontWeight.w500),
+                            title: Text(
+                              'Descrição do Livro',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 25.0),
                             ),
-                            leading: const Icon(
+                            leading: Icon(
                               Icons.book_online,
                               color: Colors.green,
                             ),
-                            trailing: IconButton(
-                              icon: const Icon(Icons.star),
-                              color:
-                                  isFavorite ? Colors.yellow[500] : Colors.grey,
-                              onPressed: () {
-                                setState(
-                                  () {
-                                    isFavorite = !isFavorite; // state
-                                  },
-                                );
-                              },
+                            subtitle: Text(
+                              'Manual DevOps',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w800, fontSize: 18.0),
                             ),
-                            subtitle: const Text('Livro 1'),
                           ),
                         ],
                       ),
                     ),
                   ),
-                  Image.asset(
-                    'assets/livro1.jpg',
-                    width: 200,
-                    height: 200,
-                    fit: BoxFit.contain,
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    child: const Card(
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            leading: CircleAvatar(
+                              backgroundImage: AssetImage('assets/genekim.jpg'),
+                              radius: 40.0,
+                            ),
+                            title: Text(
+                              'Sobre o Autor',
+                              style: TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.bold),
+                            ),
+                            subtitle: Text(
+                              'Gene Kim',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w500, fontSize: 15.0),
+                            ),
+                          ),
+                          const Divider(),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                                'Gene Kim is a multiple award-winning CTO, researcher and author, and has been studying high-performing technology organizations since 1999. He was founder and CTO of Tripwire for 13 years. He has written six books, including The Unicorn Project (2019), The Phoenix Project (2013), The DevOps Handbook (2016), the Shingo Publication Award winning Accelerate (2018), and The Visible Ops Handbook (2004-2006) series. Since 2014, he has been the founder and organizer of the DevOps Enterprise Summit, studying the technology transformations of large, complex organizations.\n\nIn 2007, ComputerWorld added Gene to the “40 Innovative IT People to Watch Under the Age of 40” list, and he was named a Computer Science Outstanding Alumnus by Purdue University for achievement and leadership in the profession.\n\nHe lives in Portland, OR, with his wife and family.'),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
