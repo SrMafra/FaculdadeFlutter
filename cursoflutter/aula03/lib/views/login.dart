@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class MyLoginPage extends StatefulWidget {
   const MyLoginPage({super.key});
@@ -18,36 +19,91 @@ class _MyLoginPageState extends State<MyLoginPage> {
         ),
         leadingWidth: 100,
       ),
-      body: const Column(
-        children: <Widget>[
-          Center(
-            child: Text(
-              'Faça Seu Login',
+      body: Container(
+        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.only(top: 20.0),
+        child: Column(
+          children: <Widget>[
+            const Text(
+              textAlign: TextAlign.center,
+              'Faça seu login',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
               ),
             ),
-          ),
-          SizedBox(height: 20),
-          Center(
-            child: Text(
+            const Text(
+              textAlign: TextAlign.center,
               'Faça o login para continuar em nosso aplicativo',
               style: TextStyle(
                 fontSize: 15,
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter a search term',
+            const SizedBox(height: 40),
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              margin: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                color: const Color.fromARGB(156, 235, 235, 235),
+              ),
+              child: TextFormField(
+                textAlign: TextAlign.left,
+                decoration: const InputDecoration(
+                  hintText: 'Insira seu e-mail',
+                  border: InputBorder.none,
+                ),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              margin: const EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                color: const Color.fromARGB(156, 235, 235, 235),
+              ),
+              child: TextFormField(
+                textAlign: TextAlign.left,
+                decoration: const InputDecoration(
+                    hintText: '********',
+                    border: InputBorder.none,
+                    suffixIcon: Icon(Icons.visibility_off_outlined)),
+              ),
+            ),
+            const SizedBox(height: 10),
+            const Text(
+              'Esqueceu Sua Senha?',
+              textAlign: TextAlign.right,
+            ),
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              margin: const EdgeInsets.only(top: 20.0),
+              width: 340, // Largura do botão
+              height: 60, // Altura do botão
+              child: ElevatedButton(
+                onPressed: () {
+                  // Responder ao pressionar o botão
+                },
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.blue, // Cor do texto do botão
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        10), // Forma do botão (borda arredondada)
+                  ),
+                ),
+                child: const Text(
+                  'Entrar',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+            const SizedBox(height: 10),
+            
+          ],
+        ),
       ),
     );
   }
