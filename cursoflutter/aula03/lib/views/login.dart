@@ -74,7 +74,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
             child: TextFormField(
               textAlign: TextAlign.left,
               decoration: const InputDecoration(
-                  hintText: '********',
+                  hintText: '*******',
                   border: InputBorder.none,
                   suffixIcon: Icon(Icons.visibility_off_outlined)),
             ),
