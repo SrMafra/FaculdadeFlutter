@@ -1,14 +1,13 @@
-import 'package:aula03/views/next1.dart';
 import 'package:flutter/material.dart';
 
-class IniciarPage extends StatefulWidget {
-  const IniciarPage({super.key});
+class Next1Page extends StatefulWidget {
+  const Next1Page({super.key});
 
   @override
-  State<IniciarPage> createState() => _IniciarPageState();
+  State<Next1Page> createState() => _Next1PageState();
 }
 
-class _IniciarPageState extends State<IniciarPage> {
+class _Next1PageState extends State<Next1Page> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,7 +32,7 @@ class _IniciarPageState extends State<IniciarPage> {
             ),
             Padding(
               padding: const EdgeInsets.all(
-                  30.0), // Margem de 50 pixels em todas as direções
+                  30.0), // Margem de 30 pixels em todas as direções
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -80,11 +79,7 @@ class _IniciarPageState extends State<IniciarPage> {
                   const SizedBox(height: 30),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Next1Page()),
-                      );
+                      // Ação do botão iniciar
                     },
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
