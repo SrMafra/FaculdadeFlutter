@@ -65,6 +65,3 @@ Requisitos Técnicos
 Flutter SDK: 3.0 ou superior
 Dependências:
 shared_preferences: Para armazenamento local dos dados.
-Considerações Finais
-O projeto "Meus Hábitos" é uma solução simples e eficaz para o gerenciamento de hábitos diários, focando na usabilidade e no armazenamento local. A estrutura modular do código facilita a manutenção e a escalabilidade, permitindo que novos recursos sejam adicionados facilmente no futuro.
-
